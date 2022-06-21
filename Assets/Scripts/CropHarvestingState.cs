@@ -4,7 +4,6 @@ using UnityEngine;
 public class CropHarvestingState : CropBaseState
 {
     private readonly Vector3 _startCropScale = new Vector3(1f, 250f, 1f);
-    private readonly Vector3 _offset = new Vector3(0f, 1.5f, 0f);
 
     private int _timesToHarvest = 3;
     public override void EnterState(CropStateManager crop)
@@ -23,7 +22,7 @@ public class CropHarvestingState : CropBaseState
         {
             if (crop.objectSlicerSamples.Length >= _timesToHarvest)
             {
-                ObjectPool.Instance.Activate(0, crop.transform.position + _offset, crop.transform.rotation);
+                ObjectPool.Instance.Activate(0, crop.transform.position, crop.transform.rotation);
                 
                 Object.Destroy(crop.gameObject);
                 crop.SwitchState(crop._plantState);

@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 
 public class ItemController : MonoBehaviour
 {
@@ -22,7 +21,6 @@ public class ItemController : MonoBehaviour
     {
         _canCollect = true;
         _itemCollector = FindObjectOfType<ItemCollector>();
-        transform.DOMoveY( 0f, .2f);
     }
 
     private void Update()
